@@ -1,0 +1,16 @@
+#create alias in Bashrc or you can make it global
+
+
+Dangling Ip address-
+alias ip-jma='httpx -ip | cut -d "[" -f 2 | cut -d "]" -f 1 | httpx -title -cname -tls-grab -tls-probe'
+Usage - cat targets.txt | ip-jma | grep -v targets 
+
+Dangling Ip address - another way.
+alias ips-jma='httpx -ip | cut -d "[" -f 2 | cut -d "]" -f 1 | cinfo'
+Usage - cat targets.txt | ips-jma | grep -v target
+Note - you need cinfo from https://github.com/j3ssie/go-auxs 
+
+full run of Httpx 
+alias httpx-jma='httpx -ip -title -sc -cname -fr -tls-grab -tls-probe -csp-probe'
+usage - cat targets.txt | httpx-jma
+
